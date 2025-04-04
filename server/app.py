@@ -6,7 +6,11 @@ app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # Replace with env variable in production
 
 # Allow frontend origin
-CORS(app, supports_credentials=True, origins=["http://localhost:3000"])
+CORS(app, supports_credentials=True, origins=["https://flask-react-session-3-1.onrender.com"])
+app.config.update(
+    SESSION_COOKIE_SAMESITE='None',
+    SESSION_COOKIE_SECURE=True
+)
 
 # Session config
 app.permanent_session_lifetime = timedelta(days=7)
