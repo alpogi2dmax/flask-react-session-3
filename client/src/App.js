@@ -5,7 +5,7 @@ function App() {
   const [loginData, setLoginData] = useState({ username: '', password: '' });
 
   const fetchUser = async () => {
-    const res = await fetch('http://localhost:5000/user', {
+    const res = await fetch('https://flask-react-session-3.onrender.com/user', {
       credentials: 'include',
     });
     const data = await res.json();
@@ -13,7 +13,7 @@ function App() {
   };
 
   const login = async () => {
-    const res = await fetch('http://localhost:5000/login', {
+    const res = await fetch('https://flask-react-session-3.onrender.com/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       credentials: 'include',
@@ -23,7 +23,7 @@ function App() {
   };
 
   const logout = async () => {
-    await fetch('http://localhost:5000/logout', {
+    await fetch('https://flask-react-session-3.onrender.com/logout', {
       method: 'POST',
       credentials: 'include',
     });
